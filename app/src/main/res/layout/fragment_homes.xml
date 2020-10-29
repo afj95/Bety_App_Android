@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E1E1E1"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_homes_back_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textColor="@color/black"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/progress_homes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/text_create_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:layout_alignParentEnd="true"
+        android:text="@string/add_home" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_homes"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:background="@android:color/transparent"
+        android:scrollbarStyle="outsideOverlay"
+        android:layout_below="@+id/text_create_home" />
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adViewHomes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-5831309394570908/7234070808">
+<!--        "ca-app-pub-3940256099942544/6300978111" Testing ad-->
+    </com.google.android.gms.ads.AdView>
+
+</RelativeLayout>

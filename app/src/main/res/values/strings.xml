@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bety</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_up_txt"><u>Sign Up</u></string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="phone">Phone Number</string>
+    <string name="pass">Password</string>
+    <string name="have_acc">Have an Account ?</string>
+    <string name="forgot_pass">Forgot Password</string>
+    <string name="language">Language</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_in_txt"><u>Sign In</u></string>
+    <string name="required_input">This input is required</string>
+    <string name="pass_length">Your password must be 8–12 characters</string>
+    <string name="stuff">Stuff</string>
+    <string name="quantity">Quantity</string>
+    <string name="wrong_pass">Email or Password is wrong</string>
+    <string name="undo">Undo</string>
+    <string name="exist_user">This email is exist</string>
+    <string name="invalid_email">Invalid email</string>
+    <string name="add">Add</string>
+    <string name="add_stuff">Add new Stuff</string>
+    <string name="cancel">Cancel</string>
+    <string name="sure_exit">Are you sure you want to exit? </string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="added">Added</string>
+    <string name="failed">Failed to add</string>
+    <string name="suggestions">Suggestions</string>
+    <string name="add_new_home">Add new Home</string>
+    <string name="empty">Empty</string>
+    <string name="noHomes">No homes were added</string>
+    <string name="deleted"> Deleted</string>
+    <string name="home_name">Home Name: </string>
+    <string name="created">Created: </string>
+    <string name="add_home">Create Home</string>
+    <string name="press_back">Press back again to exit</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="lang">عربي</string>
+    <string name="add_member">Add new Member</string>
+    <string name="stuffs">Stuffs: </string>
+    <string name="something_wrong">Something went wrong</string>
+    <string name="my_homes">My Homes</string>
+    <string name="members">Members: </string>
+    <string name="wrong_email">Wrong Email</string>
+    <string name="sure_delete">Are you sure you want to delete this home ?</string>
+    <string name="delete">Delete</string>
+
+    <string name="error">Error, Try again later</string>
+
+
+    <!-- Titles -->
+    <string name="settings">settings</string>
+    <string name="profile">Profile</string>
+
+
+</resources>
