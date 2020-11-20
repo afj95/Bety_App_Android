@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="@drawable/dark_android_wallpaper_4574522"
     >
 
     <ScrollView
@@ -33,7 +32,7 @@
                     android:id="@+id/profile_image"
                     android:layout_width="96dp"
                     android:layout_height="96dp"
-                    android:src="@drawable/profile"
+                    android:src="@drawable/ic_profile"
                     android:layout_marginTop="10dp"
                     app:civ_border_width="2dp"
                     android:layout_marginBottom="10dp"
@@ -116,25 +115,36 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/profile_info_background"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="10dp"
-                android:padding="15dp"
-                >
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/profile_info_background"-->
+<!--                android:layout_marginHorizontal="10dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:padding="15dp"-->
+<!--                >-->
 
-                <EditText
-                    android:id="@+id/text_password_edit_profile"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:inputType="textPassword"
-                    android:text="password"
-                    tools:ignore="EditTextEdits" />
+<!--                <EditText-->
+<!--                    android:id="@+id/text_password_edit_profile"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textColor="#000000"-->
+<!--                    android:inputType="textPassword"-->
+<!--                    android:text="password"-->
+<!--                    tools:ignore="EditTextEdits" />-->
 
-            </LinearLayout>
+<!--                <Space-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1" />-->
+
+<!--                <ImageButton-->
+<!--                    android:id="@+id/image_show_password_edit_profile"-->
+<!--                    android:layout_width="45dp"-->
+<!--                    android:layout_height="28dp"-->
+<!--                    android:src="@drawable/ic_show_password" />-->
+
+<!--            </LinearLayout>-->
 
             <LinearLayout
                 android:layout_width="match_parent"

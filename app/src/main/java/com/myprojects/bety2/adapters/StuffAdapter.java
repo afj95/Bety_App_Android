@@ -2,7 +2,6 @@ package com.myprojects.bety2.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +30,7 @@ public class StuffAdapter extends RecyclerView.Adapter<StuffAdapter.ViewHolder> 
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.recycler_stuff_template2, parent, false);
+                .inflate(R.layout.recycler_stuff_template, parent, false);
 
         return new ViewHolder(view, mListener);
     }

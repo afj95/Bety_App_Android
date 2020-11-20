@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E1E1E1"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <TextView
         android:id="@+id/text_homes_back_fragment"
@@ -11,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:textColor="@color/black"
+        android:textColor="#000000"
         android:visibility="gone" />
 
     <ProgressBar
@@ -28,7 +29,7 @@
         android:layout_height="wrap_content"
         android:gravity="end"
         android:textSize="18sp"
-        android:textColor="@color/black"
+        android:textColor="#000000"
         android:padding="10dp"
         android:layout_alignParentEnd="true"
         android:text="@string/add_home" />

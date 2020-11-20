@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 
 import com.myprojects.bety2.R;
 
-public class MembersDetailsDialog extends Dialog implements View.OnClickListener {
+public class MembersDetailsDialog extends Dialog {
 
     public Activity activity;
     public Button yes, no;
@@ -33,10 +33,5 @@ public class MembersDetailsDialog extends Dialog implements View.OnClickListener
 //        no = (Button) findViewById(R.id.btn_no);
 //        yes.setOnClickListener(this);
 //        no.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View v) {
-
     }
 }

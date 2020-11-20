@@ -19,7 +19,7 @@
             android:id="@+id/button_close_info"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:background="@drawable/close"/>
+            android:background="@drawable/ic_close"/>
 
     </LinearLayout>
 

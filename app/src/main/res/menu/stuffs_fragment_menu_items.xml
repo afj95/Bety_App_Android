@@ -5,7 +5,7 @@
 
     <item
         android:id="@+id/menu_add_user"
-        android:icon="@drawable/add_user_icon"
+        android:icon="@drawable/ic_add_person"
         app:showAsAction="ifRoom"
         android:title="@string/add_member" />
 

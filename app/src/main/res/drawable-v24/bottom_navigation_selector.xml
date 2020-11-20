@@ -4,11 +4,11 @@
 
     <item
         android:state_checked="true"
-        android:color="#FFFFFF"
+        android:color="#000000"
         />
 
     <item
-        android:color="#9F9F9F"
+        android:color="#B6B6B6"
         />
 
 </selector>

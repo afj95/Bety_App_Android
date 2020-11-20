@@ -1,3 +1,8 @@
+/**
+ * ToDo:
+ * 1- Get the password from Back-End not encrypted
+* */
+
 package com.myprojects.bety2.fragments;
 
 import android.annotation.SuppressLint;
@@ -6,6 +11,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +28,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.myprojects.bety2.R;
 import com.myprojects.bety2.activities.EditProfileActivity;
@@ -39,6 +46,7 @@ public class ProfileFragment extends Fragment {
     private ImageButton mImageEdit;
     private TextView mNameProfile, mUsernameProfile, mEmailProfile, /*mPasswordProfile,*/ mPhoneProfile, mJoinedProfile;
     private Button mLogOut;
+//    private ImageButton mShowPassword;
     private Context context;
 
     public static User currentUser = null;
@@ -80,6 +88,11 @@ public class ProfileFragment extends Fragment {
             startActivity(intent);
         });
 
+//        mShowPassword.setOnClickListener(v -> {
+//            Toast.makeText(getContext(), "test", Toast.LENGTH_LONG).show();
+//            mPasswordProfile.setTransformationMethod(new PasswordTransformationMethod());
+//        });
+
         return view;
     }
 
@@ -118,8 +131,9 @@ public class ProfileFragment extends Fragment {
         mNameProfile.setText(userData.getFirstName() + " " + userData.getLastName());
         mUsernameProfile.setText(userData.getUsername());
         mEmailProfile.setText(userData.getEmail());
+//        mPasswordProfile.setText(userData.getPassword());
         mPhoneProfile.setText(String.valueOf(userData.getPhoneNumber()));
-        mJoinedProfile.setText(userData.getJoined().toString());
+        mJoinedProfile.setText(userData.getJoined());
     }
 
     private void logOut(FragmentActivity activity) {
@@ -166,7 +180,9 @@ public class ProfileFragment extends Fragment {
         mEmailProfile = view.findViewById(R.id.text_email_profile);
 //        mPasswordProfile = view.findViewById(R.id.text_password_profile);
         mPhoneProfile = view.findViewById(R.id.text_phone_profile);
-        mJoinedProfile = view.findViewById(R.id.text_joined_profile);
+         mJoinedProfile = view.findViewById(R.id.text_joined_profile);
+
+//        mShowPassword = view.findViewById(R.id.image_show_password);
 
         mLogOut = view.findViewById(R.id.button_logout_profile);
     }
