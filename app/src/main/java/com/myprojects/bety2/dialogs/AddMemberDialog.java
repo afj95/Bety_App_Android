@@ -1,66 +1,72 @@
 package com.myprojects.bety2.dialogs;
 
-import android.app.AlertDialog;
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.EditText;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatDialogFragment;
+
 import com.myprojects.bety2.R;
-import com.myprojects.bety2.classes.LM;
-import com.myprojects.bety2.classes.User;
+import com.myprojects.bety2.api.ApiManager;
 
-public class AddMemberDialog extends AppCompatDialogFragment {
+import org.jetbrains.annotations.NotNull;
 
-    private EditText mEmail;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-    private AddMemberListener listener;
+public class AddMemberDialog extends Dialog {
 
-    @NonNull
-    @Override
-    public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+    private TextView mUsername;
+    private Button mAddNew;
+    private String homeID;
 
-        // Creating Specific dialog...
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        LayoutInflater inflater = getActivity().getLayoutInflater();
-        View view = inflater.inflate(R.layout.dialog_add_member, null);
-        
-        mEmail = view.findViewById(R.id.edit_email_dialog);
-
-        builder.setView(view)
-                .setTitle(LM.translate("add_member", getActivity()))
-                .setPositiveButton(LM.translate("add", getActivity()), (dialog, which) -> {
-                    if(!mEmail.getText().toString().isEmpty()) {
-                        User user = new User();
-                        user.setEmail(mEmail.getText().toString());
-                        listener.addNewMember(user);
-                    }
-                })
-                .setNegativeButton(LM.translate("cancel", getActivity()), (dialog, which) -> {
-                });
-
-        return builder.create();
+    public AddMemberDialog(@NonNull @NotNull Context context, String homeId) {
+        super(context);
+        this.homeID = homeId;
     }
 
     @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        try {
-            listener = (AddMemberListener) context;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(context.toString() + "Must implement AddUserListener");
-        }
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_LEFT_ICON);
+        setContentView(R.layout.dialog_add_member);
+
+        mUsername = findViewById(R.id.edit_username_fragment);
+        mAddNew = findViewById(R.id.button_add_member);
+
+        mAddNew.setOnClickListener(v -> {
+            ApiManager.connectToApi();
+
+            String token = getToken(),
+            username = mUsername.getText().toString();
+
+            Call<Void> call = ApiManager.apiUrl.addMember("Berer " + token, username, homeID);
+
+            call.enqueue(new Callback<Void>() {
+                @Override
+                public void onResponse(Call<Void> call, Response<Void> response) {
+                    Toast.makeText(getContext(), "Done", Toast.LENGTH_LONG).show();
+                }
+
+                @Override
+                public void onFailure(Call<Void> call, Throwable t) {
+                    Toast.makeText(getContext(), "Failed", Toast.LENGTH_LONG).show();
+                }
+            });
+
+        });
     }
 
-// =============================================================================================
-
-    public interface AddMemberListener {
-
-        void addNewMember(User user);
+    private String getToken() {
+        SharedPreferences preferences = getContext().getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+        return preferences.getString("Tokens", null);
     }
 }

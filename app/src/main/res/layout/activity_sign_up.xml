@@ -22,7 +22,7 @@
             <LinearLayout
                 android:layout_width="300dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/simple_background"
+                android:background="@drawable/auth_background"
                 android:gravity="center"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -51,6 +51,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#000"
                     android:textColorHint="#606060"
+                    android:textAlignment="viewStart"
                     android:hint="@string/first_name" />
 
                 <EditText
@@ -59,6 +60,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#000"
                     android:textColorHint="#606060"
+                    android:textAlignment="viewStart"
                     android:hint="@string/last_name" />
 
                 <EditText
@@ -67,6 +69,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#000"
                     android:textColorHint="#606060"
+                    android:textAlignment="viewStart"
                     android:hint="@string/email"
                     android:inputType="textEmailAddress" />
 
@@ -76,6 +79,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#000"
                     android:textColorHint="#606060"
+                    android:textAlignment="viewStart"
                     android:hint="@string/username"
                     android:inputType="textEmailAddress" />
 
@@ -85,6 +89,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#000"
                     android:textColorHint="#606060"
+                    android:textAlignment="viewStart"
                     android:hint="@string/phone"
                     android:inputType="number" />
 
@@ -94,6 +99,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="#000"
                     android:textColorHint="#606060"
+                    android:textAlignment="viewStart"
                     android:hint="@string/pass"
                     android:inputType="textPassword" />
 
@@ -108,7 +114,7 @@
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/simple_button_background"
+                    android:background="@drawable/auth_button"
                     android:textColor="#000"
                     android:text="@string/sign_up"
                     android:textSize="15dp" />

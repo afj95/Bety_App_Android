@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- This for the toggle button inside stuffs activity -->
+<!-- متل تطبيق شقردي -->
+
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:state_checked="true">
         <shape>
-            <solid android:color="@color/blue"/>
+            <solid android:color="#00acee"/>
             <corners android:radius="20dp" />
         </shape>
     </item>
 
     <item android:state_pressed="true">
         <shape>
-            <solid android:color="@color/lighterBlue"/>
+            <solid android:color="#ffcdd8ec"/>
             <corners android:radius="20dp" />
         </shape>
     </item>

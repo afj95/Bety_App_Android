@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -132,12 +134,13 @@ public class RegisterActivity extends AppCompatActivity {
                 mProgress.setVisibility(View.GONE);
 
                 if(response.isSuccessful()) {
-                    mWrongText.setVisibility(View.VISIBLE);
-                    String message = response.errorBody().string();
-                    mWrongText.setText(message.substring(12, message.length()-2));
-                } else {
                     finish();
                     startActivity(new Intent(getApplicationContext(), HomesActivity.class));
+                } else {
+                    mWrongText.setVisibility(View.VISIBLE);
+                    Toast toast = Toast.makeText(getApplicationContext(), "Failed", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
                 }
             }
             @Override

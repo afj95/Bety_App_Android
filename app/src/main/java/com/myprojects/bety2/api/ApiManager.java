@@ -14,8 +14,7 @@ public class ApiManager {
     public static ApiUrl apiUrl;
 
     public static void connectToApi() {
-        HttpLoggingInterceptor loggingInterceptor =
-                new HttpLoggingInterceptor();
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
@@ -31,7 +30,7 @@ public class ApiManager {
                 .create();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://6055f7cd688f.ngrok.io/")
+                .baseUrl("https://e71e502de528.ngrok.io/")
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(okHttpClient)

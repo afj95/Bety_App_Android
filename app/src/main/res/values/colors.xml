@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#00acee</color>
-    <color name="black">#000000</color>
-    <color name="titleColor">#FFFFFF</color>
 
-    <color name="deleteBackground">#EF3B3B</color>
-    <color name="colorGray">#D5D5D5</color>
-    <color name="blue">#00acee</color>
 
-    <color name="lighterBlue">#ffcdd8ec</color>
-    <color name="disabled">#dddddd</color>
 
 </resources>

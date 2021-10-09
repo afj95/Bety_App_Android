@@ -1,14 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#E1E1E1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/settings_constraint_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="clip_vertical"
+        android:elevation="15dp"
+        android:background="@drawable/settings_background">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:text="@string/change_lang"
+            android:textColor="#000000"
+            android:gravity="center"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toStartOf="@id/toggle_language_settings"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ToggleButton
+            android:id="@+id/toggle_language_settings"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:textOff="English"
+            android:textOn="عربي"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/settings_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000"
+        android:layout_below="@+id/settings_constraint_layout"
+        android:layout_marginVertical="25dp"
+        android:layout_marginHorizontal="10dp"
+        />
+
+    <TextView
+        android:id="@+id/text_about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/settings_view"
+        android:layout_centerInParent="true"
+        android:textColor="#000000"
+        android:layout_marginTop="55dp"
+        android:elevation="10dp"
+        android:textSize="22dp"
+        android:text="About"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/text_about"
         android:layout_centerInParent="true"
-        android:textColor="#000"
-        android:textSize="44dp"
-        android:text="Settings"
+        android:textColor="#000000"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="20dp"
+        android:elevation="10dp"
+        android:textSize="12dp"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
         />
 
 </RelativeLayout>

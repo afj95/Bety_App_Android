@@ -2,6 +2,7 @@ package com.myprojects.bety2.classes;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -17,15 +18,16 @@ import lombok.Setter;
 public class User {
 
     @Setter @Getter
-    private String firstName, lastName, username, email, password, loginToken;
+    private String firstName, lastName, username, email, password;
     @Setter @Getter
     @SerializedName("phoneNumber")
     private long phoneNumber;
     @Setter @Getter
     @SerializedName("homes")
-    private List<String> homes;
+    private List<String> homes = new ArrayList<>();
     @Setter @Getter
-    private List<Stuff> stuffs;
+    @SerializedName("stuffs")
+    private List<Stuff> stuffs = new ArrayList<>();
     @Getter
     private String joined;
 

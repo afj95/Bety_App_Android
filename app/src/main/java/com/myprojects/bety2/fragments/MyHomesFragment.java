@@ -101,11 +101,10 @@ public class MyHomesFragment extends Fragment implements HomesAdapter.OnHomeClic
         call.enqueue(new Callback<JsonArray>() {
             @Override
             public void onResponse(Call<JsonArray> call, Response<JsonArray> response) {
-                JsonArray jsonArray = response.body();
-
                 mHomesProgressBar.setVisibility(View.GONE);
 
                 if(response.isSuccessful()) {
+                    JsonArray jsonArray = response.body();
                     Gson gson = new GsonBuilder().serializeNulls().create();
                     for (JsonElement e : jsonArray) {
                         Home home = gson.fromJson(e, Home.class);

@@ -9,11 +9,9 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.SharedPreferences;
-import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -23,7 +21,6 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
@@ -34,8 +31,6 @@ import com.myprojects.bety2.adapters.StuffAdapter;
 import com.myprojects.bety2.api.ApiManager;
 import com.myprojects.bety2.classes.LM;
 import com.myprojects.bety2.classes.Stuff;
-import com.myprojects.bety2.classes.User;
-import com.myprojects.bety2.dialogs.AddMemberDialog;
 import com.myprojects.bety2.dialogs.AddStuffDialog;
 
 import org.jetbrains.annotations.NotNull;
@@ -43,7 +38,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-import lombok.SneakyThrows;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -59,7 +53,6 @@ import retrofit2.Response;
 public class StuffsActivity
         extends AppCompatActivity
         implements AddStuffDialog.AddStuffListener,
-                   AddMemberDialog.AddMemberListener,
                    StuffAdapter.OnItemCheckedListener {
 
     private String TAG = "StuffsActivity";
@@ -97,8 +90,7 @@ public class StuffsActivity
         getStuffsFromApi();
 
         // google ads
-        MobileAds.initialize(this, initializationStatus -> {
-        });
+        MobileAds.initialize(this, initializationStatus -> {});
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
@@ -120,6 +112,8 @@ public class StuffsActivity
                 .stuff("Test")
                 .homeId(homeId)
                 .build();
+        mStuffs.add(stuff);
+        mStuffs.add(stuff);
         mStuffs.add(stuff);
         mStuffRecycler.setAdapter(mStuffAdapter);
 
@@ -300,11 +294,6 @@ public class StuffsActivity
 //            super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
 //        }
     };*/
-
-    @Override
-    public void addNewMember(User user) {
-        ApiManager.connectToApi();
-    }
 
     // Check box stuff clicked
     @Override

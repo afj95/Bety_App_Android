@@ -29,18 +29,29 @@ public interface ApiUrl {
     @POST("au/logout")
     Call<Void> logOut(@Header("authorization") String authorization );
 
+    @PUT("au/update")
+    Call<Void> updateUser(@Body User user, @Header("authorization") String authorization);
+
+
     // Homes routes
     @GET("homes")
     Call<JsonArray> getHomes(@Header("authorization") String authorization);
 
+    @POST("homes")
+    Call<JsonObject> addHome(@Body Home home, @Header("authorization") String authorization);
+
     @GET("homes/info/{homeId}")
     Call<JsonObject> getHomeInfo(@Path("homeId") String homeId, @Header("authorization") String authorization);
 
-    @POST("homes/")
-    Call<JsonObject> addHome(@Body Home home, @Header("authorization") String authorization);
+    @GET("homes/members/details/{homeId}")
+    Call<JsonArray> getMembers(@Path("homeId") String homeId, @Header("authorization") String authorization);
 
     @DELETE("homes/del/{homeId}")
     Call<JsonObject> deleteHome(@Path("homeId") String homeId, @Header("authorization") String authorization);
+
+    @POST("homes/members/new/{username}/{homeId}")
+    Call<Void> addMember(@Header("authorization") String authorization, @Path("username") String username, @Path("homeId") String homeID);
+
 
     // Stuffs routes
     @GET("stuffs/{homeId}")
@@ -49,15 +60,4 @@ public interface ApiUrl {
     @POST("stuffs/add")
     Call<JsonObject> addStuff(@Body Stuff stuff);
 
-    @PUT("au/update")
-    Call<Void> updateUser(@Body User user, @Header("authorization") String authorization);
-
-    // Old API
-
-//    @POST("us/a-users/u-search/{homeId}/{memberEmail}")
-//    Call<JsonObject> addNewMemberToHome(@Path("homeId") String homeId,
-//                                        @Path("memberEmail") String userEmail);
-
-//    @PUT("st/a-stuffs/s-delete-stuff/{stuffId}/{homeId}")
-//    Call<JsonObject> deleteStuff(@Path("stuffId") String stuffId, @Path("homeId") String homeId);
 }
