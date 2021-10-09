@@ -30,7 +30,7 @@ public class ApiManager {
                 .create();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://3068cd7f3dfe.ngrok.io/")
+                .baseUrl("https://e71e502de528.ngrok.io/")
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(okHttpClient)

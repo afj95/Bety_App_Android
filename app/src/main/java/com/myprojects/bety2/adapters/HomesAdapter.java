@@ -88,7 +88,7 @@ public class HomesAdapter extends RecyclerView.Adapter<HomesAdapter.ViewHolder> 
             mMembers.setOnClickListener(v -> {
                 // open dialog shows the members of this home
                 //Toast.makeText(itemView.getContext(), "Testing members", Toast.LENGTH_LONG).show();
-                MembersDetailsDialog detailsDialog = new MembersDetailsDialog((Activity) itemView.getContext());
+                MembersDetailsDialog detailsDialog = new MembersDetailsDialog((Activity) itemView.getContext(), homeId);
                 detailsDialog.show();
             });
             // On stuffs image click

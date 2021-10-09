@@ -37,14 +37,20 @@ public interface ApiUrl {
     @GET("homes")
     Call<JsonArray> getHomes(@Header("authorization") String authorization);
 
+    @POST("homes")
+    Call<JsonObject> addHome(@Body Home home, @Header("authorization") String authorization);
+
     @GET("homes/info/{homeId}")
     Call<JsonObject> getHomeInfo(@Path("homeId") String homeId, @Header("authorization") String authorization);
 
-    @POST("homes/")
-    Call<JsonObject> addHome(@Body Home home, @Header("authorization") String authorization);
+    @GET("homes/members/details/{homeId}")
+    Call<JsonArray> getMembers(@Path("homeId") String homeId, @Header("authorization") String authorization);
 
     @DELETE("homes/del/{homeId}")
     Call<JsonObject> deleteHome(@Path("homeId") String homeId, @Header("authorization") String authorization);
+
+    @POST("homes/members/new/{username}/{homeId}")
+    Call<Void> addMember(@Header("authorization") String authorization, @Path("username") String username, @Path("homeId") String homeID);
 
 
     // Stuffs routes

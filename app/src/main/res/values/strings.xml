@@ -49,6 +49,8 @@
     <string name="wrong_email">Wrong Email</string>
     <string name="sure_delete">Are you sure you want to delete this home ?</string>
     <string name="delete">Delete</string>
+    <string name="change_lang">Language:</string>
+    <string name="member_email">Member Email</string>
 
     <string name="error">Error, Try again later</string>
 

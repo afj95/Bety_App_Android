@@ -90,8 +90,7 @@ public class StuffsActivity
         getStuffsFromApi();
 
         // google ads
-        MobileAds.initialize(this, initializationStatus -> {
-        });
+        MobileAds.initialize(this, initializationStatus -> {});
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
@@ -113,6 +112,8 @@ public class StuffsActivity
                 .stuff("Test")
                 .homeId(homeId)
                 .build();
+        mStuffs.add(stuff);
+        mStuffs.add(stuff);
         mStuffs.add(stuff);
         mStuffRecycler.setAdapter(mStuffAdapter);
 

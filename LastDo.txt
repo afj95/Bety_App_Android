@@ -1,0 +1,4 @@
+Can't register more than one user
+
+The error in back-end:
+error: MongoError: E11000 duplicate key error collection: bety.users index: homes_1 dup key: { homes: undefined }

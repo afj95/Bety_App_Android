@@ -49,6 +49,8 @@
     <string name="wrong_email">عنوان البريد خاطئ</string>
     <string name="sure_delete">هل أنت متأكد من حذف المنزل ؟</string>
     <string name="delete">حذف</string>
+    <string name="change_lang">اللغة:</string>
+    <string name="member_email">ايميل العضو</string>
 
     <string name="error">حدث خطأ، يرجى المحاولة لاحقًا</string>
 
